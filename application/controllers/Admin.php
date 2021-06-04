@@ -107,6 +107,9 @@ class Admin extends CI_Controller
         $this->session->unset_userdata('full_name');
         $this->session->unset_userdata('email');
         $this->session->unset_userdata('user_id');
+		   delete_cookie('full_name'); 
+        delete_cookie('email'); 
+        delete_cookie('user_id'); 
         $this->session->set_flashdata('msg', 'Successfully Logged Out');
         $this->session->set_flashdata('msg_class', 'bg-info text-white');
         redirect(base_url());
