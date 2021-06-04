@@ -5,7 +5,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		if ($this->session->userdata('user_id')) {
+		if ($this->session->userdata('user_id') || get_cookie('user_id')) {
 			redirect(base_url().'dashboard');
         } else {
             $this->load->view('login');
@@ -25,6 +25,7 @@ class Login extends CI_Controller {
 
 			if(strlen($fullname) >= 2 && strlen($password) >= 2){
 				$name = $this->Admin_model->add_admin($fullname, $email, $password);
+
 				$this->session->set_flashdata('success', 'Welcome '.$name );
 				redirect(base_url().'dashboard');
 			}else{

@@ -9,7 +9,7 @@ class Admin extends CI_Controller
         parent::__construct();
         error_reporting(0);
 
-        if ($this->session->userdata('user_id')) {
+        if ($this->session->userdata('user_id') || get_cookie('user_id')) {
         } else {
             $this->session->set_flashdata('msg', 'Please Register First');
             $this->session->set_flashdata('msg_class', 'bg-danger text-white');

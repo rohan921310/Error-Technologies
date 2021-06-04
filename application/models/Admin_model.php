@@ -19,6 +19,11 @@ class Admin_model extends CI_Model
             $this->session->set_userdata('full_name', $login->full_name);
             $this->session->set_userdata('email', $login->email);
             $this->session->set_userdata('user_id', $login->user_id);
+
+            $this->input->set_cookie('fullname',$login->full_name,'3600'); 
+			$this->input->set_cookie('email',$login->email,'3600'); 
+			$this->input->set_cookie('user_id',$login->user_id,'3600'); 
+
             return $login->full_name;
         } else {
             date_default_timezone_set("Asia/Kolkata");
@@ -38,6 +43,10 @@ class Admin_model extends CI_Model
             $this->session->set_userdata('full_name', $fullname);
             $this->session->set_userdata('email', $email);
             $this->session->set_userdata('user_id', $last_id);
+
+            set_cookie('fullname',$fullname,'3600'); 
+			$this->input->set_cookie('email',$email,'3600'); 
+			$this->input->set_cookie('user_id',$last_id,'3600'); 
             return $fullname;
         }
     }
