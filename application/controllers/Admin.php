@@ -55,6 +55,7 @@ class Admin extends CI_Controller
 
             //.....Reading File.....//
             $csvFile = fopen($image_path, "r");
+            $j=0;
             while (($row = fgetcsv($csvFile)) !== FALSE) {
                 $password = generateRandomString();
                 $this->Admin_model->import_users($row[0], $row[1], $password);
@@ -89,11 +90,12 @@ class Admin extends CI_Controller
                 $this->email->subject($subject);
                 $this->email->message($emailContent);
                 $this->email->send();
-                echo $this->email->print_debugger();
+                // echo $this->email->print_debugger();
+                $j++;
             }
             fclose($csvFile);
 
-            $this->session->set_flashdata('msg', 'Users Imported Successfully and Email has been sended');
+            $this->session->set_flashdata('msg', $j.' Users Imported Successfully and Email has been sended');
             $this->session->set_flashdata('msg_class', 'success');
             redirect(base_url() . 'dashboard');
         }
