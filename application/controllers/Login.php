@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
-	public function index()
+	public function registration()
 	{
 		if ($this->session->userdata('user_id') || get_cookie('user_id')) {
 			redirect(base_url().'dashboard');
@@ -28,7 +28,7 @@ class Login extends CI_Controller {
 				if($name==1){
 					$this->session->set_flashdata('msg', 'Already Registered');
 					$this->session->set_flashdata('msg_class', 'bg-danger text-white');
-					redirect(base_url());
+					redirect(base_url().'registration');
 				}else{
 					$this->session->set_flashdata('success', 'Welcome '.$name );
 					redirect(base_url().'dashboard');
@@ -37,7 +37,7 @@ class Login extends CI_Controller {
 			}else{
 				$this->session->set_flashdata('msg', 'Error');
 				$this->session->set_flashdata('msg_class', 'bg-danger text-white');
-				redirect(base_url());
+				redirect(base_url().'registration');
 			}
 		
 		}

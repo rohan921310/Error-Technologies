@@ -13,7 +13,7 @@ class Admin extends CI_Controller
         } else {
             $this->session->set_flashdata('msg', 'Please Register First');
             $this->session->set_flashdata('msg_class', 'bg-danger text-white');
-            redirect(base_url());
+            redirect(base_url().'registration');
         }
     }
 
