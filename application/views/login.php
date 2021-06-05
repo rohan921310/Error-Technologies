@@ -96,7 +96,7 @@
                     </div>
                 </form>
                 <div style="text-align: right;" >
-                  <a href="<?= base_url() ?>" style="color:#ff0000" >Not Registered!!</a>
+                  <a href="<?= base_url() ?>registration" style="color:#ff0000" >Not Registered!!</a>
                 </div>
             </div>
         </div>
