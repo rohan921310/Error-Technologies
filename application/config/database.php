@@ -6,14 +6,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	// 'hostname' => 'localhost',
-	// 'username' => 'fosnews',
-	// 'password' => 'vJalBEn8HGLLi9j',
-	// 'database' => 'abc',
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => 'root',
-	'database' => 'ankit',
+	'password' => '',
+	'database' => 'error_technologies',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
